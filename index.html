@@ -72,6 +72,8 @@
 
 
 
+
+
 // _____________________________START___________________________//
 
 
@@ -103,7 +105,7 @@ messages = {
     validLetter: 'Please enter a letter from A-Z'
 };
 var lives = 6;
-var x ="";
+
 
 
 
@@ -121,9 +123,9 @@ let randomLegend = legends[Math.floor(Math.random() * legends.length)].toUpperCa
 // _______________________________________split The random Pick_________________________
 
 
-let lettersOfLegends = randomLegend.split("");
+var lettersOfLegends = randomLegend.split("");
  
- console.log(lettersOfLegends);
+//  console.log(lettersOfLegends);
    
 
 //  ________________________for loop for letters of each legend_________________________________
@@ -134,53 +136,56 @@ let lettersOfLegends = randomLegend.split("");
 
 // __________________________________Generate  start key and Call a legend _______________________________________________
 
-var userStartsTheGame = document.getElementById("PressingKey");
+const userStartsTheGame = document.getElementById("PressingKey");
 
 
-document.addEventListener("keyup", function startGame(event){
+document.addEventListener("keyup", startGame);function startGame(){
     for (i = 0; i < lettersOfLegends.length; i++){
-        userStartsTheGame.textContent = "Guess the Legend " +
-         randomLegend;
-   
+        userStartsTheGame.textContent = "Guess the Legend "  +
+         lettersOfLegends;  
 }
-});
+};
 
 
 // _____________________________________ guessing The letters__________________________________________________
 
 
-document.onkeyup = function guessedLetters(event){
+document.onkeyup = function guessedLetters(){
 
-    let userGuess = event.key;
-    console.log(userGuess);
+    var userGuess = event.key;
+    // console.log(userGuess);
     // __________________________________right or wrong key pressed alert__________________________________
 
-var keyPressed = event.keyCode; //event.which ||
+var keyPressed = event.keyCode; 
 if (keyPressed >= 65 && keyPressed <= 122 ) {
 
     console.log("keep Going");
 }
-
-
-
-
-
-
-
-
-// else if (c < 5)
-// {
-//     console.log("C is between 2 and 5");
-// }
 else {
-    console.log("Choose a letter idiot!");
+    console.log("What are you doing? Choose a letter idiot!");
 }
 }
   
 //    ______________________________________End Of Guessing Letters Function______________________
-   
 
 
+
+// ___________________________________________________REMOVE CHOoSEN ELEMENT________________
+
+
+
+
+// _______________________________________show blank as element length___make hint button availabe______
+
+
+// ___________________________________Pussh guess characters in____________
+
+// ___________________________count down the lives_______________________
+
+// _______________________If all guesses are corect add one to wins and move to the next legend___________
+
+
+//________________________________________if lives goes to zero add one to loses_____________
 
 
 
