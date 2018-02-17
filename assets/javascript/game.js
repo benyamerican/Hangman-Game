@@ -49,25 +49,17 @@
 
 
 
-var legends = [
-    "Enistein",
-    "Heisenburg",
-    "MAri Curi",
-    "Schrondinger",
-    "Bohr",
-    "Benyamin Rogie",
-    "Tesla"
 
-];
 
 
 
 // 2. Write a function that generates a random number based off the length of your array. Use that number to get a value from your array. That value is your random word.
 
-console.log(legends[Math.floor(Math.random() * legends.length)]);
+
 
 
 // 3. We need to have each letter of the word written to our html document. Think of a way to split up your random word, and create a container for each word to write to your html document.
+
 
 
 
@@ -111,3 +103,106 @@ console.log(legends[Math.floor(Math.random() * legends.length)]);
 
 
 // All of these will be useful when you are showing the hidden word, revealing the letters, and changing the word, as well as updating the wins and losses.
+
+
+
+
+// 1-The game will have some wordlist to selct word from
+// 2-the game will only selct words from wordlist
+//3-there will be on screen image persenting any word
+//4-All guessed letters will be display on screen
+//5-The player doesnt lose by making same mistake
+//6-only alphabets are choosable
+
+//1.1 selct the word randomly the show blanks on screen
+
+//2.2guess letter -review the guess-add guess-update
+
+//3.3 see win-lose statuse-review live left-confirm win/lose
+
+
+
+
+// _____________________________START___________________________//
+
+
+// words list
+
+var legends = [
+    "Benyamin-Rogie",
+    "Roselin Franklin",
+    "Albert Enistein",
+    "Erwin Shrondinger",
+    "ruthefer",
+    "Nicola Tesla",
+    "Marie Curi",
+    "Max Plank",
+    "Avagadro",
+    "Neil Bohr",
+    "Heisenberg",
+    "Kepler",
+    "Galileo",
+    "Issac Newton"
+
+];
+// ____________________ Needed variables ______________________________________
+
+messages = {
+    win: 'You win!',
+    lose: 'Game over!',
+    guessed: ' already guessed, please try again...',
+    validLetter: 'Please enter a letter from A-Z'
+};
+var lives = 6;
+var x ="";
+
+
+
+
+
+// ___________________ picking random a Legend _________________________________________________________
+
+
+
+let randomLegend = legends[Math.floor(Math.random() * legends.length)].toUpperCase();
+
+
+
+
+// _______________________________________split The random Pick_________________________
+
+
+let lettersOfLegends = randomLegend.split("");
+ 
+ console.log(lettersOfLegends);
+   
+
+//  ________________________for loop for letters of each legend_________________________________
+
+for (i = 0; i < lettersOfLegends.length; i++){
+    console.log(lettersOfLegends[i]);
+}
+// __________________________________Generate key input_________________________
+
+
+function myFunction(event) {
+
+    document.getElementById("demo").innerHTML = "The pressed key was";
+    
+
+   
+   
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
